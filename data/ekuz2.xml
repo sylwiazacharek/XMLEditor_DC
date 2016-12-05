@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<wniosek data_zlozenia="2016-09-01">
+	<wnioskodawca>
+		<pesel>88041833558</pesel>
+		<data_urodzenia>1988-04-18</data_urodzenia>
+		<imie>Jan</imie>
+		<nazwisko>Nowak</nazwisko>
+		<nr_telefonu>(048)234876159</nr_telefonu>
+		<status>członek rodziny</status>
+	</wnioskodawca>
+	<odbior>
+		<sposob_odbioru>poczta</sposob_odbioru>
+		<adres>
+			<panstwo>Polska</panstwo>
+			<wojewodztwo>pomorskie</wojewodztwo>
+			<miasto>Gdańsk</miasto>
+			<kod_pocztowy>87-870</kod_pocztowy>
+			<ulica>Mikołaja Reja</ulica>
+			<numer_domu>49</numer_domu>
+			<numer_lokalu>3</numer_lokalu>
+			<telefon>(048)234876159</telefon>
+		</adres>
+	</odbior>
+	<panstwa_wyjazdu>
+		<panstwo_wyjazdu>
+			<kraj>Francja</kraj>
+			<data_wyjazdu>2016-12-28</data_wyjazdu>
+			<data_powrotu>2017-01-05</data_powrotu>
+			<srodek_transportu>prom</srodek_transportu>
+		</panstwo_wyjazdu>
+	</panstwa_wyjazdu>
+</wniosek>

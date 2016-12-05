@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<wniosek data_zlozenia="2017-01-03">
+	<wnioskodawca>
+		<pesel>99123198453</pesel>
+		<data_urodzenia>1999-12-31</data_urodzenia>
+		<imie>Kuba</imie>
+		<nazwisko>Jóźwiak</nazwisko>
+		<nr_telefonu>(048)123654789</nr_telefonu>
+		<status>prawo do świadczeń</status>
+		<podstawa_uprawnień>nieubezpieczony niepełnoletni obywatel</podstawa_uprawnień>
+		<załącznik>oświadczenie o miejscu zamieszkania</załącznik>
+	</wnioskodawca>
+	<odbior>
+		<sposob_odbioru>osobiście</sposob_odbioru>
+		<oddzial>
+			<nazwa>Małopolski Oddział Wojewódzki NFZ</nazwa>
+			<adres>
+				<panstwo>Polska</panstwo>
+				<wojewodztwo>małopolskie</wojewodztwo>
+				<miasto>Kraków</miasto>
+				<kod_pocztowy>31-053</kod_pocztowy>
+				<ulica>Ciemna</ulica>
+				<numer_domu>6</numer_domu>
+				<telefon>(048)122988100</telefon>
+			</adres>
+		</oddzial>
+	</odbior>
+</wniosek>

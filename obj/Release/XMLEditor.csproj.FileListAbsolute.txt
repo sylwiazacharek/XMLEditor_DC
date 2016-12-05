@@ -1,0 +1,8 @@
+E:\DC\XMLEditor\bin\Release\XMLEditor.exe.config
+E:\DC\XMLEditor\bin\Release\XMLEditor.exe
+E:\DC\XMLEditor\bin\Release\XMLEditor.pdb
+E:\DC\XMLEditor\obj\Release\XMLEditor.Form1.resources
+E:\DC\XMLEditor\obj\Release\XMLEditor.Properties.Resources.resources
+E:\DC\XMLEditor\obj\Release\XMLEditor.csproj.GenerateResource.Cache
+E:\DC\XMLEditor\obj\Release\XMLEditor.exe
+E:\DC\XMLEditor\obj\Release\XMLEditor.pdb

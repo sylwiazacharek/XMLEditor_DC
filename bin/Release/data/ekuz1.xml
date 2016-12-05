@@ -1,0 +1,40 @@
+﻿<?xml version="1.0"?>
+<wniosek data_zlozenia="2016-07-20">
+	<wnioskodawca>
+		<pesel>94122485920</pesel>
+		<data_urodzenia>1994-12-24</data_urodzenia>
+		<imie>Ania</imie>
+		<nazwisko>Kot</nazwisko>
+		<email>ania.kot@vp.pl</email>
+		<status>ubezpieczona</status>
+	</wnioskodawca>
+	<odbior>
+		<sposob_odbioru>pośrednictwo</sposob_odbioru>
+		<oddzial>
+			<nazwa>Delegatura w Toruniu</nazwa>
+			<adres>
+				<panstwo>Polska</panstwo>
+				<wojewodztwo>kujawsko-pomorskie</wojewodztwo>
+				<miasto>Toruń</miasto>
+				<kod_pocztowy>87-100</kod_pocztowy>
+				<ulica>Szosa Chełmińska</ulica>
+				<numer_domu>28</numer_domu>
+				<telefon>(048)566582600</telefon>
+			</adres>
+		</oddzial>
+	</odbior>
+	<panstwa_wyjazdu>
+		<panstwo_wyjazdu>
+			<kraj>Hiszpania</kraj>
+			<data_wyjazdu>2016-07-28</data_wyjazdu>
+			<data_powrotu>2016-08-05</data_powrotu>
+			<srodek_transportu>samolot</srodek_transportu>
+		</panstwo_wyjazdu>
+		<panstwo_wyjazdu>
+			<kraj>Chorwacja</kraj>
+			<data_wyjazdu>2016-09-01</data_wyjazdu>
+			<data_powrotu>2016-09-10</data_powrotu>
+			<srodek_transportu>autokar</srodek_transportu>
+		</panstwo_wyjazdu>
+	</panstwa_wyjazdu>
+</wniosek>

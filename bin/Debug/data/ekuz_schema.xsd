@@ -1,0 +1,169 @@
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+
+	<xsd:annotation>
+		<xsd:documentation xml:lang="pl">
+			XML Schema do pliku ekuz.
+		</xsd:documentation>
+	</xsd:annotation>
+
+	<xsd:element name="wniosek" type="wniosek_type"/>
+	
+	<xsd:complexType name="wniosek_type">
+		<xsd:sequence>
+			<xsd:element name="wnioskodawca" type="wnioskodawca_type"/>
+			<xsd:element name="odbior" type="odbior_type"/>
+			<xsd:element name="panstwa_wyjazdu" type="panstwa_wyjazdu_type" minOccurs="0"/>
+		</xsd:sequence>
+		<xsd:attribute name="data_zlozenia" type="xsd:date"/>
+	</xsd:complexType>
+	
+	<xsd:complexType name="wnioskodawca_type">
+		<xsd:sequence>
+			<xsd:element name="pesel" type="pesel_type"/>
+			<xsd:element name="data_urodzenia" type="xsd:date"/>
+			<xsd:element name="imie" type="nazwa_wlasna_type"/>
+			<xsd:element name="nazwisko" type="nazwa_wlasna_type"/>
+			<xsd:element name="nr_telefonu" type="telefon_type" minOccurs="0"/>
+			<xsd:element name="email" type="email_type" minOccurs="0"/>
+			<xsd:element name="status" type="status_type"/>
+			<xsd:element name="podstawa_uprawnień" type="podstawa_uprawnien_type" minOccurs="0"/>
+			<xsd:element name="załącznik" type="xsd:string" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="pesel_type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\d{11}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="nazwa_wlasna_type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="([A-ZĄĆĘŁŃÓŚŻŹ][A-ZĄĆĘŁŃÓŚŻŹa-ząćęłńóśżź]+)|([A-ZĄĆĘŁŃÓŚŻŹ][a-ząćęłńóśżź]+-[A-ZĄĆĘŁŃÓŚŻŹ][a-ząćęłńóśżź]+)"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="email_type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[^@ ]+@[^\.]+\..+"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="telefon_type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\(\d{3}\)\d{9}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="status_type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ubezpieczona"/>
+			<xsd:enumeration value="członek rodziny"/>
+			<xsd:enumeration value="prawo do świadczeń"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="podstawa_uprawnien_type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="decyzja wójta"/>
+			<xsd:enumeration value="nieubezpieczony niepełnoletni obywatel"/>
+			<xsd:enumeration value="nieubezpieczony niepełnoletni mieszkaniec"/>
+			<xsd:enumeration value="nieubezpieczona kobieta w ciąży"/>
+			<xsd:enumeration value="nieubezpieczona kobieta uchodźca"/>
+			<xsd:enumeration value="nieubezpieczona z prawem do świadczeń"/>
+			<xsd:enumeration value="absolwent szkoły ponadgimnazjalnej lub wyższej"/>
+			<xsd:enumeration value="zasiłek chorobowy lub wypadkowy"/>
+			<xsd:enumeration value="ubiegająca się o przyznanie emerytury lub renty"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="odbior_type">
+		<xsd:sequence>
+			<xsd:element name="sposob_odbioru" type="sposob_odbioru_type"/>
+			<xsd:element name="oddzial" type="oddzial_type"  minOccurs="0"/>
+			<xsd:element name="adres" type="adres_type"  minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+		
+	<xsd:simpleType name="sposob_odbioru_type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="osobiście"/>
+			<xsd:enumeration value="pośrednictwo"/>
+			<xsd:enumeration value="poczta"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="oddzial_type">
+		<xsd:sequence>
+			<xsd:element name="nazwa" type="xsd:string"/>
+			<xsd:element name="adres" type="adres_type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="adres_type">
+		<xsd:sequence>
+			<xsd:element name="panstwo" type="nazwa_wlasna_type"/>
+			<xsd:element name="wojewodztwo" type="wojewodztwo_type"/>
+			<xsd:element name="miasto" type="nazwa_wlasna_type"/>
+			<xsd:element name="kod_pocztowy" type="kod_pocztowy_type"/>
+			<xsd:element name="ulica" type="xsd:string"/>
+			<xsd:element name="numer_domu" type="xsd:positiveInteger"/>
+			<xsd:element name="numer_lokalu" type="xsd:positiveInteger" minOccurs="0"/>
+			<xsd:element name="telefon" type="telefon_type" minOccurs="0"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="wojewodztwo_type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="dolnośląskie"/>
+			<xsd:enumeration value="kujawsko-pomorskie"/>
+			<xsd:enumeration value="lubelskie"/>
+			<xsd:enumeration value="lubuskie"/>
+			<xsd:enumeration value="łódzkie"/>
+			<xsd:enumeration value="małopolskie"/>
+			<xsd:enumeration value="mazowieckie"/>
+			<xsd:enumeration value="opolskie"/>
+			<xsd:enumeration value="podkarpackie"/>
+			<xsd:enumeration value="podlaskie"/>
+			<xsd:enumeration value="pomorskie"/>
+			<xsd:enumeration value="śląskie"/>
+			<xsd:enumeration value="świętokrzyskie"/>
+			<xsd:enumeration value="warmińsko-mazurskie"/>
+			<xsd:enumeration value="wielkopolskie"/>
+			<xsd:enumeration value="zachodniopomorskie"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:simpleType name="kod_pocztowy_type">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="\d{2}-\d{3}"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<xsd:complexType name="panstwa_wyjazdu_type">
+		<xsd:sequence>
+		<xsd:element name="panstwo_wyjazdu" type="panstwo_wyjazdu_type" minOccurs="0" maxOccurs="unbounded"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:complexType name="panstwo_wyjazdu_type">
+		<xsd:sequence>
+			<xsd:element name="kraj" type="nazwa_wlasna_type"/>
+			<xsd:element name="data_wyjazdu" type="xsd:date"/>
+			<xsd:element name="data_powrotu" type="xsd:date"/>
+			<xsd:element name="srodek_transportu" type="srodek_transportu_type"/>
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<xsd:simpleType name="srodek_transportu_type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="samolot"/>
+			<xsd:enumeration value="autokar"/>
+			<xsd:enumeration value="samochód"/>
+			<xsd:enumeration value="rower"/>
+			<xsd:enumeration value="pieszo"/>
+			<xsd:enumeration value="prom"/>
+		</xsd:restriction>
+	</xsd:simpleType>
+
+</xsd:schema>
